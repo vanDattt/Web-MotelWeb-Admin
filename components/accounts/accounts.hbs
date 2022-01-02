@@ -1,0 +1,9 @@
+<h1>ACCOUNTS</h1>
+{{#each items }}
+    <figcaption>
+      <h2>Username: {{ this.Username }}</h2>
+      <p>Email: {{ this.Email }}</p>
+      <p>Date Created: {{ this.AccountCreateDate }}</p>
+      <p>Account ID: {{ this.AccountID }}</p>
+    </figcaption>
+{{/each}}
