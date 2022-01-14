@@ -12,8 +12,13 @@ const authRouter = require('./components/auth/authRouter');
 const usersRouter = require('./routes/users');
 const roomsRouter = require('./components/rooms/roomModel/roomRouter');
 const searchroomsRouter =  require('./components/rooms/search');
+<<<<<<< HEAD
 const checkoutRouster = require('./components/checkout');
 const accountRouster = require('./components/accounts');
+=======
+const checkoutRouter = require('./components/checkout');
+const accountRouter = require('./components/accounts/accountModel/accountRouter');
+>>>>>>> d17821c (Fix accounts page)
 const session = require("express-session");
 
 
@@ -51,8 +56,13 @@ app.use((req, res, next) =>{
 app.use('/users', usersRouter);
 app.use('/rooms',roomsRouter);
 app.use('/searchroom',searchroomsRouter);
+<<<<<<< HEAD
 app.use('/checkout',checkoutRouster);
 app.use('/accounts',accountRouster);
+=======
+app.use('/checkout',checkoutRouter);
+app.use('/accounts',accountRouter);
+>>>>>>> d17821c (Fix accounts page)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

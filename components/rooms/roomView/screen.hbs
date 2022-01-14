@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -211,3 +212,196 @@ function GoTo1Page() {
 	</script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Royal Tulip - Rooms</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+  <link href="css/templatemo-style.css" rel="stylesheet" />
+	<style>
+	.floor:link, .floor:visited {
+	  background-color: #f44336;
+	  color: white;
+	  padding: 4px 1px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	}
+
+	.floor:hover, .floor:active {
+	  background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<!-- Top box -->
+		<!-- Logo & Site Name -->
+		<div class="placeholder">
+			<div class="parallax-window" style="position: relative" data-parallax="scroll" data-image-src="img/Royal Tulip.jpg">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						{{#if user}}
+						<p style="position: absolute; right:128px;top:10px;font-size:20px;font-weight: bold"><a href="./accounts/myaccount" style="color:black;">My Account</a> </p>
+						<p style="position: absolute; right:38px;top:10px;font-size:20px;font-weight: bold"><a href="./logout" style="color:darkblue;">Log Out</a> </p>
+						{{else}}
+						<p style="position: absolute; right:125px;top:5px;font-size:19px;font-weight: bold"><a href="./register" style="color:black;">Register</a> </p>
+						<p style="position: absolute; right:39px;top:5px;font-size:19px;font-weight: bold"><a href="/" style="color:black;">Log In</a> </p>
+						{{/if}}
+						<div class="col-md-6 col-12">
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">Royal Tulip</h1>
+								<h6 class="tm-site-description">Our motel is home</h6>
+							</div>
+						</div>
+						<nav class="col-md-6 col-12 tm-nav">
+							<ul class="tm-nav-ul">
+								<li class="tm-nav-li"><a href="/rooms" class="tm-nav-link floor" style="font-size: 25px">Rooms</a></li>
+								<li class="tm-nav-li"><a href="/checkout" class="tm-nav-link floor"style="font-size: 25px">CheckOut</a></li>
+								<li class="tm-nav-li"><a href="/accounts" class="tm-nav-link floor"style="font-size: 25px">Services</a></li>
+								<li class="tm-nav-li"><a href="/accounts" class="tm-nav-link floor"style="font-size: 25px">Accounts</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- End of Header -->
+
+	<div class="container">
+
+		<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">This is your admin page</h2>
+				<p class="col-12 text-center">Where you control what's going on in inside your motel</p>
+			</header>
+
+
+			<div class="container">
+						<fieldset>
+						<legend>SEARCH FOR A ROOM</legend>
+						<div class="form-group">
+						  <label for="" class="col-md-4 control-label">Enter Room Name</label>
+						  <div class="col-md-4 inputGroupContainer">
+						  <div class="input-group">
+						  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						  <input name="" id="name-search" placeholder="" class="form-control"  type="text">
+						    </div>
+						  </div>
+						</div>
+						<div class="form-group">
+						  <label class="col-md-4 control-label"></label>
+						  <div class="col-md-4">
+						  <button class="btn btn-info" onclick="Search()"> Search </button>
+						  </div>
+						</div>
+					</fieldset>
+					</div>
+
+			<div class="tm-paging-links">
+				<nav>
+          <h2>These here are the rooms </h2>
+				</nav>
+			</div>
+
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<!-- gallery page 1 -->
+
+						<div id="tm-gallery-page-firstfloor" class="tm-gallery-page">
+							{{#each items }}
+							{{#unless this.archived}}
+							<article class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+								<figure>
+									<img src={{this.picture}} alt="Image" class="img-fluid tm-gallery-img" />
+									<figcaption>
+										<h4 class="tm-gallery-title">Room name: {{ this.name }}</h4>
+										<p class="tm-gallery-description">Room type: {{ this.type }}</p>
+										<p class="tm-gallery-description">Room status: {{ this.status }}</p>
+										<p class="tm-gallery-price">Room price: {{ this.price }}</p>
+									</figcaption>
+								</figure>
+							</article>
+							{{/unless}}
+							{{/each}}
+						</div>
+					</div>
+			 <!-- gallery page 1 -->
+			 <ul>
+				 <li class="tm-paging-item" id="Prev_button"><a href="#" onclick="GoToPreviousPage()" class="floor">Previous</a></li>
+				 <li class="tm-paging-item" id="Next_button"><a href="#" onclick="GoToNextPage()" class="floor">Next</a></li>
+			 </ul>
+
+	<div class="container my-4">
+	  <hr class="mt-5">
+	    <div class="col text-center">
+				<a href="rooms/add" class="tm-btn tm-btn-primary tm-btn-lg" >Add Rooms</a>
+				<a href="rooms/update" class="tm-btn tm-btn-success tm-btn-lg">Update Rooms</a>
+				<a href="rooms/erase" class="tm-btn tm-btn-danger tm-btn-lg">Erase Rooms</a>
+			</div>
+		<hr class="mb-5"/>
+	</div>
+		</main>
+
+<!-- Start of Footer -->
+		<footer class="tm-footer text-center">
+		  <p>Copyright &copy; 2020 Royal Tulip
+
+		        | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+		</footer>
+<!-- End of Footer -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script src="js/rooms.js"></script>
+
+
+	<script>
+
+		function GoTo3Page() {
+		var url = window.location.href;
+		if(url.indexOf('page=')==-1)
+		{
+			window.location=(url+'?page=3');
+		}
+		else {
+			url = url.slice(0,-1)+'3';
+			window.location=url;
+		}
+	}
+
+function GoTo1Page() {
+	var url = window.location.href;
+
+	if(url.indexOf('page=')==-1)
+	{
+		window.location=(url+'?page=1');
+	}
+	else {
+		url = url.slice(0,-1)+'1';
+		window.location=url;
+	}
+}
+</script>
+
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</body>
+</html>
+>>>>>>> d17821c (Fix accounts page)
