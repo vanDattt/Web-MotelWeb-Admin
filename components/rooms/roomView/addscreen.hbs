@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="../css/templatemo-style.css" rel="stylesheet" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="../css/edit-room.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="container">
+    <form class="well form-horizontal" action="/rooms/addroom" method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>ADD A NEW ROOM</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="name" class="col-md-4 control-label">Room Name</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="name" id="name" placeholder="i.e: R05 R06 ..." class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="type" class="col-md-4 control-label" >Room Type</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="type" id="type" placeholder="i.e: 1,2,.." class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label for="status" class="col-md-4 control-label">Room Status</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="status" id="status" placeholder="i.e: available.." class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label for="price" class="col-md-4 control-label">Room Price</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="price" id="price" placeholder="i.e: 400000.." class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="picture" class="col-md-4 control-label">Room Picture</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="picture" id="picture" placeholder="i.e: img/room-05.jpg" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label for="archived" class="col-md-4 control-label">Room Archived</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="archived" id="archived" placeholder="i.e: true/false" class="form-control"  type="text">
+    </div>
+</div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+  <button  class="btn btn-info" type="submit"> Done </button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div>
+</body>
+</html>

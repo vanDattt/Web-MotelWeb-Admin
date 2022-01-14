@@ -1,0 +1,29 @@
+<link href="css/templatemo-style.css" rel="stylesheet" />
+<style>
+.floor:link, .floor:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 4px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.floor:hover, .floor:active {
+  background-color: red;
+}
+</style>
+<h1>ACCOUNTS</h1>
+{{#each items }}
+    <figcaption>
+      <h2>Username: {{ this.username }}</h2>
+      <p>Email: {{ this.email }}</p>
+      <p>Date Created: {{ this.initiatedDate }}</p>
+      <p>Account ID: {{ this.accountID }}</p>
+    </figcaption>
+{{/each}}
+<ul>
+  <li class="tm-paging-item" id="Prev_button"><a href="#" onclick="GoToPreviousPage()" class="floor">Previous</a></li>
+  <li class="tm-paging-item" id="Next_button"><a href="#" onclick="GoToNextPage()" class="floor">Next</a></li>
+</ul>
+<script src="js/accounts.js"></script>
