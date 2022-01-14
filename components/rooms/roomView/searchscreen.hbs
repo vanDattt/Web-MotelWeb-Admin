@@ -1,200 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Royal Tulip - Rooms</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
-  <link href="../css/templatemo-style.css" rel="stylesheet" />
-	<style>
-	.floor:link, .floor:visited {
-	  background-color: #f44336;
-	  color: white;
-	  padding: 14px 25px;
-	  text-align: center;
-	  text-decoration: none;
-	  display: inline-block;
-	}
-
-	.floor:hover, .floor:active {
-	  background-color: red;
-	}
-	</style>
-</head>
-<body>
-	<div class="container">
-	<!-- Top box -->
-		<!-- Logo & Site Name -->
-		<div class="placeholder">
-			<div class="parallax-window" data-parallax="scroll" data-image-src="../img/Royal Tulip.jpg">
-				<div class="tm-header">
-					<div class="row tm-header-inner">
-						<div class="col-md-6 col-12">
-							<div class="tm-site-text-box">
-								<h1 class="tm-site-title">Royal Tulip</h1>
-								<h6 class="tm-site-description">Our motel is home</h6>
-							</div>
-						</div>
-						<nav class="col-md-6 col-12 tm-nav">
-							<ul class="tm-nav-ul">
-								<li class="tm-nav-li"><a href="/rooms" class="tm-nav-link floor">Rooms</a></li>
-								<li class="tm-nav-li"><a href="/checkout" class="tm-nav-link floor">Check Out</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	<!-- End of Header -->
-
-	<div class="container">
-
-		<main>
-			<header class="row tm-welcome-section">
-				<h2 class="col-12 text-center tm-section-title">This is your admin page</h2>
-				<p class="col-12 text-center">Where you control what's going on in inside your motel</p>
-			</header>
-
-
-			<div class="container">
-			    <form class="well form-horizontal" action="/rooms/searchroom" method="post"  id="contact_form">
-						<fieldset>
-						<legend>SEARCH FOR A ROOM</legend>
-						<div class="form-group">
-						  <label for="name" class="col-md-4 control-label">Enter Room Name</label>
-						  <div class="col-md-4 inputGroupContainer">
-						  <div class="input-group">
-						  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						  <input  name="name" id="name" placeholder="" class="form-control"  type="text">
-						    </div>
-						  </div>
-						</div>
-						<div class="form-group">
-						  <label class="col-md-4 control-label"></label>
-						  <div class="col-md-4">
-						  <button  class="btn btn-info" type="submit"> Search </button>
-						  </div>
-						</div>
-					</fieldset>
-					</form>
-					</div>
-
-			<div class="tm-paging-links">
-				<nav>
-          <h2>These here are the rooms </h2>
-					<ul>
-						<li class="tm-paging-item"><a href="#" onclick="GoTo1Page()" class="floor">FirstFloor</a></li>
-						<li class="tm-paging-item"><a href="#" onclick="GoTo2Page()" class="floor">SecondFloor</a></li>
-						<li class="tm-paging-item"><a href="#" onclick="GoTo3Page()" class="floor">ThirdFloor</a></li>
-					</ul>
-				</nav>
-			</div>
-
-			<!-- Gallery -->
-			<div class="row tm-gallery">
-				<!-- gallery page 1 -->
-
-						<div id="tm-gallery-page-firstfloor" class="tm-gallery-page">
-							{{#each items }}
-							{{#unless this.archived}}
-							<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-								<figure>
-									<img src=../{{this.picture}} alt="Image" class="img-fluid tm-gallery-img" />
-									<figcaption>
-										<h4 class="tm-gallery-title">Room name: {{ this.name }}</h4>
-										<p class="tm-gallery-description">Room type: {{ this.type }}</p>
-										<p class="tm-gallery-description">Room status: {{ this.status }}</p>
-										<p class="tm-gallery-price">Room price: {{ this.price }}</p>
-									</figcaption>
-								</figure>
-							</article>
-							{{/unless}}
-							{{/each}}
-
-			 <!-- gallery page 1 -->
-
-
-	<div class="container my-4">
-	  <hr class="mt-5">
-	    <div class="col text-center">
-				<a href="../rooms/add" class="tm-btn tm-btn-primary tm-btn-lg" >Add Rooms</a>
-				<a href="../rooms/update" class="tm-btn tm-btn-success tm-btn-lg">Update Rooms</a>
-				<a href="../rooms/erase" class="tm-btn tm-btn-danger tm-btn-lg">Erase Rooms</a>
-			</div>
-		<hr class="mb-5"/>
-	</div>
-		</main>
-
-<!-- Start of Footer -->
-		<footer class="tm-footer text-center">
-		  <p>Copyright &copy; 2020 Royal Tulip
-
-		        | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
-		</footer>
-<!-- End of Footer -->
-
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/parallax.min.js"></script>
-
-
-
-	<script>
-	function GoTo3Page() {
-		var url = window.location.href;
-		if(url.indexOf('page=')==-1)
-		{
-			window.location=(url+'?page=3');
-		}
-		else {
-			url = url.slice(0,-1)+'3';
-			window.location=url;
-		}
-	}
-
-function GoTo2Page() {
-	var url = window.location.href;
-	if(url.indexOf('page=')==-1)
-	{
-		window.location=(url+'?page=2');
-	}
-	else {
-		url = url.slice(0,-1)+'2';
-		window.location=url;
-	}
-}
-function GoTo1Page() {
-	var url = window.location.href;
-
-	if(url.indexOf('page=')==-1)
-	{
-		window.location=(url+'?page=1');
-	}
-	else {
-		url = url.slice(0,-1)+'1';
-		window.location=url;
-	}
-}
-</script>
-
-	<script>
-		$(document).ready(function(){
-			// Handle click on paging links
-			$('.tm-paging-link').click(function(e){
-				e.preventDefault();
-
-				var page = $(this).text().toLowerCase();
-				$('.tm-gallery-page').addClass('hidden');
-				$('#tm-gallery-page-' + page).removeClass('hidden');
-				$('.tm-paging-link').removeClass('active');
-				$(this).addClass("active");
-			});
-		});
-	</script>
-</body>
-</html>
-=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -224,7 +27,7 @@ function GoTo1Page() {
 	<!-- Top box -->
 		<!-- Logo & Site Name -->
 		<div class="placeholder">
-			<div class="parallax-window" data-parallax="scroll" data-image-src="../img/Royal Tulip.jpg">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="../images/Royal Tulip.jpg">
 				<div class="tm-header">
 					<div class="row tm-header-inner">
 						{{#if user}}
@@ -300,7 +103,7 @@ function GoTo1Page() {
 							{{#unless this.archived}}
 							<article class="col-lg-3 col-md-4 col-sm-6 col-12 ">
 								<figure>
-									<img src=../{{this.picture}} alt="Image" class="img-fluid tm-gallery-img" />
+									<img src=../{{this.image}} alt="Image" class="img-fluid tm-gallery-img" />
 									<figcaption>
 										<h4 class="tm-gallery-title">Room name: {{ this.name }}</h4>
 										<p class="tm-gallery-description">Room type: {{ this.type }}</p>
@@ -397,4 +200,3 @@ function GoTo1Page() {
 	</script>
 </body>
 </html>
->>>>>>> d17821c (Fix accounts page)

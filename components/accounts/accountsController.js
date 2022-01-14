@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-const account = require("../../server/model/admin-account")
-exports.list = async (req,res) => {
-    console.log(1);
-    let result= await account.find({});
-    console.log(result);
-    res.render('../components/accounts/accounts' , { items:result });
-}
-=======
 const accountService=require("./accountModel/accountService")
 
 exports.list = async (req,res) => {
@@ -18,6 +9,8 @@ exports.list = async (req,res) => {
 }
 
 exports.myaccount = async (req,res)=>{
-  res.render('../components/accounts/accountView/myaccount');
+  const uname =  req.user.username;
+  console.log(uname);
+  const account = await accountService.myaccount(uname);
+  res.render('../components/accounts/accountView/myaccount',{ acc: account });
 }
->>>>>>> d17821c (Fix accounts page)

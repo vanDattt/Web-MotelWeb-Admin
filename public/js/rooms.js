@@ -13,6 +13,7 @@ function Search(){
 }
 
 function GoToNextPage() {
+  event.preventDefault();
 	var url = window.location.href;
   var pos = url.indexOf('page=');
 	if(pos==-1)
@@ -30,6 +31,7 @@ function GoToNextPage() {
 }
 
 function GoToPreviousPage() {
+  event.preventDefault();
 	var url = window.location.href;
   var pos = url.indexOf('page=');
   pos = pos + 5;
