@@ -12,6 +12,8 @@ const authRouter = require('./components/auth/authRouter');
 const usersRouter = require('./routes/users');
 const roomsRouter = require('./components/rooms/roomModel/roomRouter');
 const searchroomsRouter =  require('./components/rooms/search');
+const servicesRouter = require('./components/services/serviceModel/serviceRouter');
+const searchservicesRouter =  require('./components/services/search');
 const checkoutRouter = require('./components/checkout');
 const accountRouter = require('./components/accounts/accountModel/accountRouter');
 const session = require("express-session");
@@ -51,6 +53,8 @@ app.use((req, res, next) =>{
 app.use('/users', usersRouter);
 app.use('/rooms',roomsRouter);
 app.use('/searchroom',searchroomsRouter);
+app.use('/services',servicesRouter);
+app.use('/searchservice',searchservicesRouter);
 app.use('/checkout',checkoutRouter);
 app.use('/accounts',accountRouter);
 

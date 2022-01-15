@@ -12,6 +12,15 @@ function Search(){
   window.location=(url+name);
 }
 
+function ServiceSearch(){
+  var url = window.location.href;
+  let pos = url.lastIndexOf("/");
+  var name = document.getElementById("name-search").value;
+  url = url.slice(0,pos+1);
+  url =(url.indexOf('searchservice/')==-1)? url + "searchservice/" : url;
+  window.location=(url+name);
+}
+
 function GoToNextPage() {
   event.preventDefault();
 	var url = window.location.href;

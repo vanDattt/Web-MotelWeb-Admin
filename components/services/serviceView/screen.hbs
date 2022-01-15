@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Royal Tulip - Rooms</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
-  <link href="../css/templatemo-style.css" rel="stylesheet" />
+  <link href="css/templatemo-style.css" rel="stylesheet" />
 	<style>
 	.floor:link, .floor:visited {
 	  background-color: #f44336;
@@ -27,7 +27,7 @@
 	<!-- Top box -->
 		<!-- Logo & Site Name -->
 		<div class="placeholder">
-			<div class="parallax-window" data-parallax="scroll" data-image-src="../images/Royal Tulip.jpg">
+			<div class="parallax-window" style="position: relative" data-parallax="scroll" data-image-src="images/Royal Tulip.jpg">
 				<div class="tm-header">
 					<div class="row tm-header-inner">
 						{{#if user}}
@@ -67,30 +67,29 @@
 
 
 			<div class="container">
-
-							<fieldset>
-							<legend>SEARCH FOR A ROOM</legend>
-							<div class="form-group">
-								<label for="" class="col-md-4 control-label">Enter Room Name</label>
-								<div class="col-md-4 inputGroupContainer">
-								<div class="input-group">
-								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="" id="name-search" placeholder="" class="form-control"  type="text">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-4 control-label"></label>
-								<div class="col-md-4">
-								<button class="btn btn-info" onclick="Search()"> Search </button>
-								</div>
-							</div>
-						</fieldset>
+						<fieldset>
+						<legend>SEARCH FOR A SERVICE</legend>
+						<div class="form-group">
+						  <label for="" class="col-md-4 control-label">Enter Service Name</label>
+						  <div class="col-md-4 inputGroupContainer">
+						  <div class="input-group">
+						  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						  <input name="" id="name-search" placeholder="" class="form-control"  type="text">
+						    </div>
+						  </div>
+						</div>
+						<div class="form-group">
+						  <label class="col-md-4 control-label"></label>
+						  <div class="col-md-4">
+						  <button class="btn btn-info" onclick="ServiceSearch()"> Search </button>
+						  </div>
+						</div>
+					</fieldset>
 					</div>
 
 			<div class="tm-paging-links">
 				<nav>
-          <h2>These here are the rooms </h2>
+          <h2>These here are the services </h2>
 				</nav>
 			</div>
 
@@ -103,11 +102,10 @@
 							{{#unless this.archived}}
 							<article class="col-lg-3 col-md-4 col-sm-6 col-12 ">
 								<figure>
-									<img src=../{{this.image}} alt="Image" class="img-fluid tm-gallery-img" />
+									<img src={{this.image}} alt="Image" class="img-fluid tm-gallery-img" />
 									<figcaption>
-										<h4 class="tm-gallery-title">Room name: {{ this.name }}</h4>
-										<p class="tm-gallery-description">Room type: {{ this.type }}</p>
-										<p class="tm-gallery-description">Room status: {{ this.status }}</p>
+										<h4 class="tm-gallery-title">Service name: {{ this.name }}</h4>
+										<p class="tm-gallery-description">Service type: {{ this.type }}</p>
 										<p class="tm-gallery-price">Room price: {{ this.price }}</p>
 									</figcaption>
 								</figure>
@@ -117,17 +115,17 @@
 						</div>
 					</div>
 			 <!-- gallery page 1 -->
-		 		 <ul>
-				 	<li class="tm-paging-item" id="Prev_button"><a href="#" onclick="GoToPreviousPage()" class="floor">Previous</a></li>
-				 	<li class="tm-paging-item" id="Next_button"><a href="#" onclick="GoToNextPage()" class="floor">Next</a></li>
-				 </ul>
+			 <ul>
+				 <li class="tm-paging-item" id="Prev_button"><a href="#" onclick="GoToPreviousPage()" class="floor">Previous</a></li>
+				 <li class="tm-paging-item" id="Next_button"><a href="#" onclick="GoToNextPage()" class="floor">Next</a></li>
+			 </ul>
 
 	<div class="container my-4">
 	  <hr class="mt-5">
-			<div class="col text-center">
-				<a href="../rooms/add" class="tm-btn tm-btn-primary tm-btn-lg" >Add Rooms</a>
-				<a href="../rooms/update" class="tm-btn tm-btn-success tm-btn-lg">Update Rooms</a>
-				<a href="../rooms/erase" class="tm-btn tm-btn-danger tm-btn-lg">Erase Rooms</a>
+	    <div class="col text-center">
+				<a href="services/add" class="tm-btn tm-btn-primary tm-btn-lg" >Add Services</a>
+				<a href="services/update" class="tm-btn tm-btn-success tm-btn-lg">Update Services</a>
+				<a href="services/erase" class="tm-btn tm-btn-danger tm-btn-lg">Erase Services</a>
 			</div>
 		<hr class="mb-5"/>
 	</div>
@@ -141,9 +139,9 @@
 		</footer>
 <!-- End of Footer -->
 
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/parallax.min.js"></script>
-	<script src="../js/rooms.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script src="js/rooms.js"></script>
 
 	<script>
 		$(document).ready(function(){

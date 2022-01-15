@@ -69,9 +69,9 @@
 			<div class="container">
 
 							<fieldset>
-							<legend>SEARCH FOR A ROOM</legend>
+							<legend>SEARCH FOR A SERVICE</legend>
 							<div class="form-group">
-								<label for="" class="col-md-4 control-label">Enter Room Name</label>
+								<label for="" class="col-md-4 control-label">Enter Service Name</label>
 								<div class="col-md-4 inputGroupContainer">
 								<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -82,7 +82,7 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label"></label>
 								<div class="col-md-4">
-								<button class="btn btn-info" onclick="Search()"> Search </button>
+								<button class="btn btn-info" onclick="ServiceSearch()"> Search </button>
 								</div>
 							</div>
 						</fieldset>
@@ -90,7 +90,7 @@
 
 			<div class="tm-paging-links">
 				<nav>
-          <h2>These here are the rooms </h2>
+          <h2>These here are the services </h2>
 				</nav>
 			</div>
 
@@ -105,10 +105,9 @@
 								<figure>
 									<img src=../{{this.image}} alt="Image" class="img-fluid tm-gallery-img" />
 									<figcaption>
-										<h4 class="tm-gallery-title">Room name: {{ this.name }}</h4>
-										<p class="tm-gallery-description">Room type: {{ this.type }}</p>
-										<p class="tm-gallery-description">Room status: {{ this.status }}</p>
-										<p class="tm-gallery-price">Room price: {{ this.price }}</p>
+										<h4 class="tm-gallery-title">Service name: {{ this.name }}</h4>
+										<p class="tm-gallery-description">Service type: {{ this.type }}</p>
+										<p class="tm-gallery-price">Service price: {{ this.price }}</p>
 									</figcaption>
 								</figure>
 							</article>
@@ -125,9 +124,9 @@
 	<div class="container my-4">
 	  <hr class="mt-5">
 			<div class="col text-center">
-				<a href="../rooms/add" class="tm-btn tm-btn-primary tm-btn-lg" >Add Rooms</a>
-				<a href="../rooms/update" class="tm-btn tm-btn-success tm-btn-lg">Update Rooms</a>
-				<a href="../rooms/erase" class="tm-btn tm-btn-danger tm-btn-lg">Erase Rooms</a>
+				<a href="../services/add" class="tm-btn tm-btn-primary tm-btn-lg" >Add Services</a>
+				<a href="../services/update" class="tm-btn tm-btn-success tm-btn-lg">Update Services</a>
+				<a href="../services/erase" class="tm-btn tm-btn-danger tm-btn-lg">Erase Services</a>
 			</div>
 		<hr class="mb-5"/>
 	</div>
