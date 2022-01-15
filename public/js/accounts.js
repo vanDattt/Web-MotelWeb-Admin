@@ -32,3 +32,20 @@ function GoToPreviousPage() {
   url = url.substring(0,pos)+pagenum;
 	window.location=url;
 }
+
+function ReturnHome() {
+  event.preventDefault();
+  window.location="/rooms";
+}
+
+function GoToAccountsPage(){
+  event.preventDefault();
+  window.location="/accounts";
+}
+
+function CheckValid() {
+  if(username.value.length==0||fullname.value.length==0||password.value.length==0||phoneNumber.value.length==0||date.value.length==0||email.value.length==0)
+  alert("Don't leave any blank box");
+  else
+  alert("Update successful you will need to log in your account again");
+};

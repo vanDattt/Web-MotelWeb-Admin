@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/tabmenu.css" type="text/css" />
-<link href="css/templatemo-style.css" rel="stylesheet" />
+<link rel="stylesheet" href="../css/tabmenu.css" type="text/css" />
+<link href="../css/templatemo-style.css" rel="stylesheet" />
 <style>
 .floor:link, .floor:visited {
   background-color: #f44336;
@@ -19,20 +19,24 @@
   <hr />
   <div id="tabs" style="margin: 10px">
     <ul>
-      <li><a href="/accounts" style="color: red"><span>Admin accounts</span></a></li>
-      <li><a href="/accounts/user-accounts" style="color: gray"><span>User accounts</span></a></li>
+      <li><a href="/accounts" style="color: gray"><span>Admin accounts</span></a></li>
+      <li><a href="/accounts/user-accounts" style="color: red"><span>User accounts</span></a></li>
     </ul>
   </div>
 {{#each items }}
+  <div class="{{this.username}}" onclick="getInfo(this,'one')" style="cursor: pointer;display: inline-block">
     <figcaption style="margin: 10px">
       <h2>Username: {{ this.username }}</h2>
       <p>Email: {{ this.email }}</p>
-      <p>Date Created: {{ this.initiatedDate }}</p>
-      <p>Account ID: {{ this.accountID }}</p>
     </figcaption>
+  </div>
+</br>
 {{/each}}
+<ul>
+  <li class="tm-paging-item" id="Prev_button"><a href="#" onclick="GoToPreviousPage()" class="floor">Previous</a></li>
+  <li class="tm-paging-item" id="Next_button"><a href="#" onclick="GoToNextPage()" class="floor">Next</a></li>
+</ul>
 <button class="btn-block" style="font-size: 25px;background-color: gray; display: inline-block; margin: 10px; cursor: pointer;color: white" onclick="ReturnHome()">Back to home page</button>
 <script src="../js/accounts.js"></script>
-<script src="js/accounts.js"></script>
-
+<script src="../js/accountinfo.js"></script>
 </body>

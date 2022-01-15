@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../../css/tabmenu.css" type="text/css" />
+<link href="../../css/templatemo-style.css" rel="stylesheet" />
+<style>
+.floor:link, .floor:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 4px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.floor:hover, .floor:active {
+  background-color: red;
+}
+</style>
+<body>
+  <h1 style="position: relative;left: 30px;">ACCOUNTS</h1>
+  <hr />
+  {{#each item }}
+  <div>
+    <figcaption style="margin: 10px">
+      <h2>Username: {{ this.username }}</h2>
+      <p>Fullname: {{ this.name }}</p>
+      <p>Gender: {{ this.gender }}</p>
+      <p>Email: {{ this.email }}</p>
+      <p>Phone: {{ this.phoneNumber }}</p>
+    </figcaption>
+  </div>
+</br>
+<ul>
+  <li class="tm-paging-item" id="Back_button"><a href="#" onclick="GoToAccountsPage()" class="floor">Back</a></li>
+  <li class="tm-paging-item" id="Ban_button"><a href="/accounts/banuser/{{this.username}}" onclick="BanUser()" class="floor">Ban user</a></li>
+</ul>
+{{/each}}
+<script src="../../js/accounts.js"></script>
+</body>

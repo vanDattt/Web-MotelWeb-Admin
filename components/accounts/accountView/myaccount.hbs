@@ -2,49 +2,47 @@
 <link href="../css/myaccount.css" rel="stylesheet" />
 <link href="../css/bootstrap.min.css" rel="stylesheet" />
 </head>
-<div class="container-fluid px-1 py-5 mx-auto">
-    <div class="row d-flex justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-            <h2>ACCOUNT INFORMATION</h2>
-            <h3 class="blue-text">Each suggestion in text box is your current information<br> Rewrite what you want to update and press UPDATE</h3>
-            <div class="card">
-                <h5 class="text-center mb-4">Powering world-class companies</h5>
-                <form class="form-card" onsubmit="event.preventDefault()">
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Username<span class="text-danger"> *</span></label> <input type="text" id="username" name="username" placeholder="{{acc.username}}" onblur="validate(1)"> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Fullname<span class="text-danger"> *</span></label> <input type="text" id="fullname" name="fullname" placeholder="{{acc.fullname}}" onblur="validate(2)"> </div>
-                    </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Password<span class="text-danger"> *</span></label> <input type="text" id="password" name="password" placeholder="" onblur="validate(3)"> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="text" id="phoneNumber" name="phoneNumber" placeholder="{{acc.phoneNumber}}" onblur="validate(4)"> </div>
-                    </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Date created<span class="text-danger"> *</span></label> <input type="text" id="date" name="date" placeholder="{{acc.initiatedDate}}" onblur="validate(5)"> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Gender</label>
-                           <input id="male" type="radio" name="gender" value="male">
-                           <label for="male">Male</label>
-                           <input id="female" type="radio" name="gender" value="female">
-                           <label for="female">Female</label>
-                           <input id="other" type="radio" name="gender" value="other">
-                           <label for="other">Other</label>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between text-left">
-                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="{{acc.email}}" onblur="validate(6)"> </div>
-                    </div>
-                    <div class="row justify-content-end">
-                      <div class="form-group col-sm-6"> <button class="btn-block btn-primary" style="background-color: gray" onclick="ReturnHome()">Back</button></div>
-                      <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Update</button> </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="js/jquery.min.js"></script>
-<script src="js/myaccount.js"></script>
-<script>
-  function ReturnHome() {
-    window.location="/rooms";
-  }
-</script>
+<body>
+  <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+              <h2>ACCOUNT INFORMATION</h2>
+              <h3 class="blue-text">Each suggestion in text box is your current information<br> Rewrite what you want to update and press UPDATE</h3>
+              <div class="card">
+                  <h5 class="text-center mb-4">ROYAL TULIP ADMIN</h5>
+                  <h5 class="text-center mb-4" style="color: red">* Please don't leave any box blank</h5>
+                  <form class="form-card" action="/accounts/myaccount/update" method="post">
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Username<span class="text-danger"> *</span></label> <input type="text" id="username" name="username" value="{{acc.username}}" onblur="validate(1)"> </div>
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Fullname<span class="text-danger"> *</span></label> <input type="text" id="fullname" name="fullname" value="{{acc.fullname}}" onblur="validate(2)"> </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Password<span class="text-danger"> *</span></label> <input type="password" id="password" name="password" value="{{acc.password}}" onblur="validate(3)"> </div>
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> <input type="text" id="phoneNumber" name="phoneNumber" value="{{acc.phoneNumber}}" onblur="validate(4)"> </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Date created<span class="text-danger"> *</span></label> <input type="text" id="date" name="date" value="{{acc.initiatedDate}}" onblur="validate(5)"> </div>
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Gender</label>
+                             <input id="male" type="radio" name="gender" value="male" checked>
+                             <label for="male">Male</label>
+                             <input id="female" type="radio" name="gender" value="female">
+                             <label for="female">Female</label>
+                             <input id="other" type="radio" name="gender" value="other">
+                             <label for="other">Other</label>
+                          </div>
+                      </div>
+                      <div class="row justify-content-between text-left">
+                          <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" value="{{acc.email}}" onblur="validate(6)"> </div>
+                      </div>
+                      <div class="row justify-content-end">
+
+                        <div class="form-group col-sm-12"> <button type="submit" class="btn-block btn-primary" onclick="CheckValid()">Update</button> </div>
+                      </div>
+                  </form>
+                <button class="btn-block" style="background-color: gray" onclick="ReturnHome()">Back</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+<script src="../js/accounts.js"></script>

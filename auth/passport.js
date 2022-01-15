@@ -10,7 +10,7 @@ passport.use(new LocalStrategy({
   async function(username, password, done) {
 
     try{
-    const user = await adminAccount.findOne({ email: username }).lean();
+    const user = await adminAccount.findOne({ email: username, archived: false }).lean();
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
