@@ -14,21 +14,37 @@
   background-color: red;
 }
 </style>
-<body>  
-<h1 style="position: relative;left: 30px;">BILLS</h1>
+<body>
+<h3 style="position: relative;left: 30px; color: green">MANAGE YOUR BILLS</h3>
 <hr />
+<h2>Select type sort and press submit</h2>
 <div id="tabs" style="margin: 10px">
   <ul>
-    <li><a href="/accounts" style="color: red"><span>Admin accounts</span></a></li>
-    <li><a href="/accounts/user-accounts" style="color: gray"><span>User accounts</span></a></li>
+    <form action="/bills/date" method="post">
+      <li><span>Day</span></li>
+      <input type="date" id="day" name="day">
+      <input type="submit" value="Submit">
+    </form>
+    <form action="/bills/month" method="post">
+      <li><span>Month</span></li>
+      <input type="month" id="month" name="month">
+      <input type="submit" value="Submit">
+    </form>
+    <form action="/bills/year" method="post">
+      <li><span>Year</span></li>
+      <input type="number" id="year" name="year">
+      <input type="submit" value="Submit">
+    </form>
   </ul>
 </div>
 {{#each items }}
   <figcaption style="margin: 10px">
-    <h2>Username: {{ this.name }}</h2>
-    <p>Email: {{ this.customerEmail }}</p>
+    <h2>Billname: {{ this.name }}</h2>
+    <p>Customer Email: {{ this.customerEmail }}</p>
     <p>Date Created: {{ this.date }}</p>
-    <p>Account ID: {{ this.roomName }}</p>
+    <p>Room Booked: {{ this.roomName }}</p>
+    <p>Services Ordered: {{ this.serviceName }}</p>
+    <p>Total: {{ this.totalPrice }}</p>
   </figcaption>
 {{/each}}
 <ul>
