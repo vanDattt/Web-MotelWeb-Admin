@@ -1,0 +1,3 @@
+DB_URL=mongodb+srv://nxhanh18:Hanh18042001@studycluster.r4nyq.mongodb.net/motelDB?retryWrites=true&w=majority
+DB_DATABASE=motelDB
+SESSION_SECRET=cats
