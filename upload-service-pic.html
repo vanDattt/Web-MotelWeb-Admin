@@ -1,0 +1,25 @@
+<h1>UPLOAD A SERVICE PICTURE FROM YOUR DEVICE</h1>
+<h2> Your file name will be stored so remember it </h2>
+</br>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<div class="row justify-content-center">
+ <div class="col-4">
+  <form action="/uploadservice" enctype="multipart/form-data" method="post">
+   <div class="row">
+    <div class="col-8">
+      <input type="file" class="form-control" name="file">
+    </div>
+    <div class="col-4">
+      <input type="submit" class="btn btn-warning" value="Upload Images">
+    </div>
+   </div>
+  </form>
+  <button class="btn-block" style="background-color: gray" onclick="ReturnHome()">Back</button>
+ </div>
+</div>
+<script>
+  function ReturnHome() {
+    event.preventDefault();
+    window.location="/services";
+  }
+</script>
