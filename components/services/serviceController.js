@@ -69,3 +69,19 @@ exports.search = async (req,res)=>{
   const services= await serviceService.search(page, nPerPage,name);
   res.render('../components/services/serviceView/searchscreen' , { items:services });
 }
+
+exports.sortFood = async (req,res)=>{
+  let nPerPage= 4;
+  let {page} = req.query;
+  page= Math.max(parseInt(page)||1,1);
+  const services= await serviceService.sortFood(page, nPerPage);
+  res.render('../components/services/serviceView/sortscreen' , { items:services });
+}
+
+exports.sortDrinks = async (req,res)=>{
+  let nPerPage= 4;
+  let {page} = req.query;
+  page= Math.max(parseInt(page)||1,1);
+  const services= await serviceService.sortDrinks(page, nPerPage);
+  res.render('../components/services/serviceView/sortscreen' , { items:services });
+}

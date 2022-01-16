@@ -14,6 +14,10 @@ router.post('/eraseroom',RoomsController.erase)
 
 router.get('/searchroom',RoomsController.search)
 
+router.get('/sort/high-price',RoomsController.sortHigh)
+
+router.get('/sort/low-price',RoomsController.sortLow)
+
 //router.get('/:roomID',RoomsController.detail);
 
 router.get('/add', function(req, res, next) {

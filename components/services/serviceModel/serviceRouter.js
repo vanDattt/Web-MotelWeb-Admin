@@ -13,6 +13,10 @@ router.post('/eraseservice',ServicesController.erase)
 
 router.get('/searchservice',ServicesController.search)
 
+router.get('/sort/food',ServicesController.sortFood)
+
+router.get('/sort/drinks',ServicesController.sortDrinks)
+
 //router.get('/:roomID',RoomsController.detail);
 
 router.get('/add', function(req, res, next) {

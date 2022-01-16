@@ -38,3 +38,13 @@ exports.search = (pageNumber, nPerPage, name) =>{
     let result=room.find({name: {$regex: name, $options: '-i'} ,archived: false}).limit(nPerPage).skip((pageNumber -1)*nPerPage);
     return result;
 }
+
+exports.sortHigh = (pageNumber, nPerPage) =>{
+    let result=room.find({price: { $gt: 499999} ,archived: false}).limit(nPerPage).skip((pageNumber -1)*nPerPage);
+    return result;
+}
+
+exports.sortLow = (pageNumber, nPerPage) =>{
+    let result=room.find({price: { $lt: 300001} ,archived: false}).limit(nPerPage).skip((pageNumber -1)*nPerPage);
+    return result;
+}

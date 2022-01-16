@@ -46,7 +46,7 @@ exports.myaccountUpdate = async (req,res)=>{
     gender: req.body.gender,
     email: req.body.email,
     };
-    if(item.username==="")
+    if(item.username===""||item.fullname===""||item.password===""||item.phoneNumber===""||item.date===""||item.email==="")
     {
       res.redirect('/accounts/myaccount');
     }else{

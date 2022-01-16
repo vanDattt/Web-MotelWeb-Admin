@@ -70,3 +70,19 @@ exports.search = async (req,res)=>{
   const rooms= await roomService.search(page, nPerPage,name);
   res.render('../components/rooms/roomView/searchscreen' , { items:rooms });
 }
+
+exports.sortHigh = async (req,res)=>{
+  let nPerPage= 4;
+  let {page} = req.query;
+  page= Math.max(parseInt(page)||1,1);
+  const rooms= await roomService.sortHigh(page, nPerPage);
+  res.render('../components/rooms/roomView/sortscreen' , { items:rooms });
+}
+
+exports.sortLow = async (req,res)=>{
+  let nPerPage= 4;
+  let {page} = req.query;
+  page= Math.max(parseInt(page)||1,1);
+  const rooms= await roomService.sortLow(page, nPerPage);
+  res.render('../components/rooms/roomView/sortscreen' , { items:rooms });
+}

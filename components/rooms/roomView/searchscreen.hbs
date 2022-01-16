@@ -31,23 +31,23 @@
 				<div class="tm-header">
 					<div class="row tm-header-inner">
 						{{#if user}}
-						<p style="position: absolute; right:128px;top:10px;font-size:20px;font-weight: bold"><a href="./accounts/myaccount" style="color:black;">My Account</a> </p>
-						<p style="position: absolute; right:38px;top:10px;font-size:20px;font-weight: bold"><a href="./logout" style="color:darkblue;">Log Out</a> </p>
+						<p style="position: absolute; right:128px;top:10px;font-size:20px;font-weight: bold"><a href="/accounts/myaccount" style="color:black;">My Account</a> </p>
+						<p style="position: absolute; right:38px;top:10px;font-size:20px;font-weight: bold"><a href="/logout" style="color:darkblue;">Log Out</a> </p>
 						{{else}}
-						<p style="position: absolute; right:125px;top:5px;font-size:19px;font-weight: bold"><a href="./register" style="color:black;">Register</a> </p>
+						<p style="position: absolute; right:125px;top:5px;font-size:19px;font-weight: bold"><a href="/register" style="color:black;">Register</a> </p>
 						<p style="position: absolute; right:39px;top:5px;font-size:19px;font-weight: bold"><a href="/" style="color:black;">Log In</a> </p>
 						{{/if}}
 						<div class="col-md-6 col-12">
 							<div class="tm-site-text-box">
-								<h1 class="tm-site-title">Royal Tulip</h1>
-								<h6 class="tm-site-description">Our motel is home</h6>
+								<h1 class="tm-site-title" style="color: green;font-weight: bold">Royal Tulip</h1>
+								<h6 class="tm-site-description" style="color: darkgreen">Our motel is home</h6>
 							</div>
 						</div>
 						<nav class="col-md-6 col-12 tm-nav">
 							<ul class="tm-nav-ul">
 								<li class="tm-nav-li"><a href="/rooms" class="tm-nav-link floor" style="font-size: 25px">Rooms</a></li>
-								<li class="tm-nav-li"><a href="/checkout" class="tm-nav-link floor"style="font-size: 25px">CheckOut</a></li>
 								<li class="tm-nav-li"><a href="/services" class="tm-nav-link floor"style="font-size: 25px">Services</a></li>
+								<li class="tm-nav-li"><a href="/checkout" class="tm-nav-link floor"style="font-size: 25px">CheckOut</a></li>
 								<li class="tm-nav-li"><a href="/accounts" class="tm-nav-link floor"style="font-size: 25px">Accounts</a></li>
 							</ul>
 						</nav>
@@ -91,6 +91,11 @@
 			<div class="tm-paging-links">
 				<nav>
           <h2>These here are the rooms </h2>
+					<div class="col text-center">
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" ReturnHome()">All</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortHigh()">High Price</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortLow()">Low Price</button>
+				 </div>
 				</nav>
 			</div>
 
@@ -146,6 +151,20 @@
 	<script src="../js/parallax.min.js"></script>
 	<script src="../js/rooms.js"></script>
 
+	<script>
+	function ReturnHome() {
+		event.preventDefault();
+		window.location="/rooms";
+	}
+	function SortHigh() {
+		event.preventDefault();
+		window.location="/rooms/sort/high-price";
+	}
+	function SortLow() {
+		event.preventDefault();
+		window.location="/rooms/sort/low-price";
+	}
+	</script>
 	<script>
 		$(document).ready(function(){
 			// Handle click on paging links

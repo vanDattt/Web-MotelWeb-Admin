@@ -15,7 +15,7 @@ const roomsRouter = require('./components/rooms/roomModel/roomRouter');
 const searchroomsRouter =  require('./components/rooms/search');
 const servicesRouter = require('./components/services/serviceModel/serviceRouter');
 const searchservicesRouter =  require('./components/services/search');
-const checkoutRouter = require('./components/checkout');
+const billRouter = require('./components/bills/billModel/billRouter');
 const accountRouter = require('./components/accounts/accountModel/accountRouter');
 
 const session = require("express-session");
@@ -57,7 +57,7 @@ app.use('/rooms',roomsRouter);
 app.use('/searchroom',searchroomsRouter);
 app.use('/services',servicesRouter);
 app.use('/searchservice',searchservicesRouter);
-app.use('/checkout',checkoutRouter);
+app.use('/bills',billRouter);
 app.use('/accounts',accountRouter);
 app.get('/uploadroom',(req,res) => {
   res.sendFile(__dirname+'/upload-room-pic.html')

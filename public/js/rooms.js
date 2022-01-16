@@ -5,18 +5,24 @@ if(url.indexOf('page=')==-1 || url.indexOf('page=1')>-1){
 
 function Search(){
   var url = window.location.href;
-  let pos = url.lastIndexOf("/");
+  let pos = url.indexOf("searchroom");
+  if(pos==-1){
+    pos = url.indexOf("room");
+  }
   var name = document.getElementById("name-search").value;
-  url = url.slice(0,pos+1);
+  url = url.slice(0,pos);
   url =(url.indexOf('searchroom/')==-1)? url + "searchroom/" : url;
   window.location=(url+name);
 }
 
 function ServiceSearch(){
   var url = window.location.href;
-  let pos = url.lastIndexOf("/");
+  let pos = url.indexOf("searchservice");
+  if(pos==-1){
+    pos = url.indexOf("service");
+  }
   var name = document.getElementById("name-search").value;
-  url = url.slice(0,pos+1);
+  url = url.slice(0,pos);
   url =(url.indexOf('searchservice/')==-1)? url + "searchservice/" : url;
   window.location=(url+name);
 }
