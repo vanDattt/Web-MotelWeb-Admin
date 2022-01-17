@@ -90,6 +90,11 @@
 			<div class="tm-paging-links">
 				<nav>
           <h2>These here are the services </h2>
+					<div class="col text-center">
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" ReturnHome()">All</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortFood()">Food</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortDrinks()">Drinks</button>
+				 </div>
 				</nav>
 			</div>
 
@@ -143,6 +148,20 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/parallax.min.js"></script>
 	<script src="js/rooms.js"></script>
+	<script>
+	function ReturnHome() {
+	  event.preventDefault();
+	  window.location="/services";
+	}
+	function SortFood() {
+	  event.preventDefault();
+	  window.location="/services/sort/food";
+	}
+	function SortDrinks() {
+	  event.preventDefault();
+	  window.location="/services/sort/drinks";
+	}
+	</script>
 
 	<script>
 		$(document).ready(function(){

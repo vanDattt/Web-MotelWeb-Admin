@@ -37,6 +37,9 @@
     </form>
   </ul>
 </div>
+<br />
+<h2 style="color:red">TOTAL: {{sum}}</h2>
+<br />
 {{#each items }}
   <figcaption style="margin: 10px">
     <h2>Billname: {{ this.name }}</h2>
@@ -53,5 +56,4 @@
 </ul>
 <button class="btn-block" style="font-size: 25px;background-color: gray; display: inline-block; margin: 10px; cursor: pointer;color: white" onclick="ReturnHome()">Back to home page</button>
 <script src="../js/accounts.js"></script>
-<script src="../js/accountinfo.js"></script>
 </body>

@@ -9,5 +9,5 @@ router.post('/date',BillController.date);
 
 router.post('/month',BillController.month);
 
-router.post('/date',BillController.year);
+router.post('/year',BillController.year);
 module.exports = router;

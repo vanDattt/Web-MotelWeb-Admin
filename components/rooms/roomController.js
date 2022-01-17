@@ -29,6 +29,10 @@ exports.add = async (req,res)=>{
     quantity:req.body.quantity,
     status: req.body.status,
   };
+  if(item.image.indexOf("/images/room-images/")==-1)
+  {
+    item.image = "/images/room-images/" + item.image;
+  }
   let nPerPage= 4;
   let {page} = req.query;
   page= Math.max(parseInt(page)||1,1);
@@ -45,6 +49,10 @@ exports.update = async (req,res)=>{
   quantity:req.body.quantity,
   status: req.body.status,
 };
+if(item.image.indexOf("/images/room-images/")==-1)
+{
+  item.image = "/images/room-images/" + item.image;
+}
   const prename = req.body.prename
   let nPerPage= 4;
   let {page} = req.query;

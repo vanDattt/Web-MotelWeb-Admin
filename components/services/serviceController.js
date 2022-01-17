@@ -28,6 +28,10 @@ exports.add = async (req,res)=>{
     quantity:req.body.quantity,
     status: req.body.status,
   };
+  if(item.image.indexOf("/images/service-images/")==-1)
+  {
+    item.image = "/images/service-images/" + item.image;
+  }
   let nPerPage= 4;
   let {page} = req.query;
   page= Math.max(parseInt(page)||1,1);
@@ -44,6 +48,10 @@ exports.update = async (req,res)=>{
   quantity:req.body.quantity,
   status: req.body.status,
 };
+if(item.image.indexOf("/images/service-images/")==-1)
+{
+  item.image = "/images/service-images/" + item.image;
+}
   const prename = req.body.prename
   let nPerPage= 4;
   let {page} = req.query;
@@ -74,6 +82,7 @@ exports.sortFood = async (req,res)=>{
   let nPerPage= 4;
   let {page} = req.query;
   page= Math.max(parseInt(page)||1,1);
+
   const services= await serviceService.sortFood(page, nPerPage);
   res.render('../components/services/serviceView/sortscreen' , { items:services });
 }
