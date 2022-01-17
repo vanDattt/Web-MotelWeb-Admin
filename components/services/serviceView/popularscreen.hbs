@@ -1,0 +1,18 @@
+<h1>TOP 3 MOST ORDERED SERVICES <h1>
+{{#each items }}
+    <article class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+      <figure>
+        <figcaption style=" border-style: inset;">
+          <h4 class="tm-gallery-title" style="color: red;">Service name: {{ this.[0]}}</h4>
+          <p class="tm-gallery-price" style="color: blue">Service ordered: {{ this.[1]}} times</p>
+        </figcaption>
+      </figure>
+    </article>
+{{/each}}
+<button class="btn-block" style="font-size: 25px;background-color: gray; width: 150px; margin: 10px; cursor: pointer;color: white" onclick="ReturnHome()">Back to home page</button>
+<script>
+function ReturnHome() {
+  event.preventDefault();
+  window.location="/services";
+}
+</script>

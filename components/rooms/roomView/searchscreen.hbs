@@ -93,6 +93,7 @@
           <h2>These here are the rooms </h2>
 					<div class="col text-center">
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" ReturnHome()">All</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortPopular()">Popular</button>
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortHigh()">High Price</button>
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortLow()">Low Price</button>
 				 </div>
@@ -155,6 +156,10 @@
 	function ReturnHome() {
 		event.preventDefault();
 		window.location="/rooms";
+	}
+	function SortPopular() {
+		event.preventDefault();
+		window.location="/rooms/sort/popular";
 	}
 	function SortHigh() {
 		event.preventDefault();

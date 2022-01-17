@@ -20,7 +20,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>ADD A NEW ROOM</legend>
+<legend>ADD A NEW SERVICE</legend>
 
 <!-- Text input-->
 
@@ -29,7 +29,7 @@
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="name" id="name" placeholder="i.e: Coca,Mỳ,..." class="form-control"  type="text">
+  <input  name="name" id="name" placeholder="i.e: Coca,Pepsi,..." class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -77,10 +77,15 @@
   <button  class="btn btn-info" type="submit"> Done </button>
   </div>
 </div>
-
 </fieldset>
 </form>
+<button class="btn-block" style="font-size: 25px;background-color: gray; width: 150px; margin: 10px; cursor: pointer;color: white" onclick="ReturnHome()">Back to home page</button>
 </div>
-    </div>
+  <script>
+  function ReturnHome() {
+	  event.preventDefault();
+	  window.location="/services";	}
+  </script>
+
 </body>
 </html>

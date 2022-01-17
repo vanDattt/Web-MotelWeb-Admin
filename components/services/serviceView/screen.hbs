@@ -92,6 +92,7 @@
           <h2>These here are the services </h2>
 					<div class="col text-center">
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" ReturnHome()">All</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortPopular()">Popular</button>
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortFood()">Food</button>
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortDrinks()">Drinks</button>
 				 </div>
@@ -111,7 +112,7 @@
 									<figcaption>
 										<h4 class="tm-gallery-title">Service name: {{ this.name }}</h4>
 										<p class="tm-gallery-description">Service type: {{ this.type }}</p>
-										<p class="tm-gallery-price">Room price: {{ this.price }}</p>
+										<p class="tm-gallery-price">Service price: {{ this.price }}</p>
 									</figcaption>
 								</figure>
 							</article>
@@ -152,6 +153,10 @@
 	function ReturnHome() {
 	  event.preventDefault();
 	  window.location="/services";
+	}
+	function SortPopular() {
+		event.preventDefault();
+		window.location="/services/sort/popular";
 	}
 	function SortFood() {
 	  event.preventDefault();

@@ -14,6 +14,8 @@ router.post('/eraseroom',RoomsController.erase)
 
 router.get('/searchroom',RoomsController.search)
 
+router.get('/sort/popular',RoomsController.sortPopular)
+
 router.get('/sort/high-price',RoomsController.sortHigh)
 
 router.get('/sort/low-price',RoomsController.sortLow)

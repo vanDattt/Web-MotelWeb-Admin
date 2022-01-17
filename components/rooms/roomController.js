@@ -29,6 +29,10 @@ exports.add = async (req,res)=>{
     quantity:req.body.quantity,
     status: req.body.status,
   };
+  if(item.name==""||item.type==""||item.price==""||item.image==""||item.quantity==""||item.status=="")
+  {
+    res.redirect('/rooms/add');
+  }
   if(item.image.indexOf("/images/room-images/")==-1)
   {
     item.image = "/images/room-images/" + item.image;
@@ -49,6 +53,10 @@ exports.update = async (req,res)=>{
   quantity:req.body.quantity,
   status: req.body.status,
 };
+if(item.name==""||item.type==""||item.price==""||item.image==""||item.quantity==""||item.status=="")
+{
+  res.redirect('/rooms/update');
+}
 if(item.image.indexOf("/images/room-images/")==-1)
 {
   item.image = "/images/room-images/" + item.image;
@@ -77,6 +85,12 @@ exports.search = async (req,res)=>{
   page= Math.max(parseInt(page)||1,1);
   const rooms= await roomService.search(page, nPerPage,name);
   res.render('../components/rooms/roomView/searchscreen' , { items:rooms });
+}
+
+exports.sortPopular = async (req,res)=>{
+  const bills= await roomService.sortPopular();
+  const top= await roomService.top(bills,3);
+  res.render('../components/rooms/roomView/popularscreen',{items:top});
 }
 
 exports.sortHigh = async (req,res)=>{

@@ -1,4 +1,5 @@
 const service = require("../../../server/model/service")
+const bill = require("../../../server/model/bill")
 
 exports.list = (pageNumber, nPerPage) =>{
     let result=service.find({archived: false});
@@ -51,4 +52,46 @@ exports.sortFood = (pageNumber, nPerPage) =>{
 exports.sortDrinks = (pageNumber, nPerPage) =>{
     let result=service.find({type: 'drinks' ,archived: false}).limit(nPerPage).skip((pageNumber -1)*nPerPage);
     return result;
+}
+
+exports.sortPopular = () =>{
+    let result=bill.aggregate([{
+      $group: {
+                _id: {service:'$serviceName'},
+                count: { $sum: 1 }
+              }
+                              }]);
+    return result;
+}
+
+exports.top = (bills,top) =>{
+    var num=bills.length;
+    var array = new Array(num);
+    if(num<=top){
+        for (i = 0; i < num; i++) {
+          array[i] = new Array(2);
+          array[i][0]  =  bills[i]._id.service;
+          array[i][1]  =  bills[i].count;
+        }
+    }
+    else{
+      for (i = 0; i < top; i++) {
+        array[i] = new Array(2);
+        array[i][0]  =  bills[i]._id.service;
+        array[i][1]  =  bills[i].count;
+      }
+      for (i = top; i < num; i++)
+      {
+        for(j = 0;j < top;j++)
+        {
+          if(bills[i].count>array[j][1])
+          {
+            array[j][0]  =  bills[i]._id.service;
+            array[j][1]  =  bills[i].count;
+            break;
+          }
+        }
+      }
+    }
+    return array;
 }

@@ -93,6 +93,7 @@
           <h2>These here are the services </h2>
 					<div class="col text-center">
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" ReturnHome()">All</button>
+						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortPopular()">Popular</button>
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortFood()">Food</button>
 						<button type="submit" class="tm-btn tm-btn-primary tm-btn-lg" onclick=" SortDrinks()">Drinks</button>
 				 </div>
@@ -153,6 +154,10 @@
 	function ReturnHome() {
 		event.preventDefault();
 		window.location="/services";
+	}
+	function SortPopular() {
+		event.preventDefault();
+		window.location="/services/sort/popular";
 	}
 	function SortFood() {
 		event.preventDefault();

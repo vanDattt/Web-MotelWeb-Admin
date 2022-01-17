@@ -13,6 +13,8 @@ router.post('/eraseservice',ServicesController.erase)
 
 router.get('/searchservice',ServicesController.search)
 
+router.get('/sort/popular',ServicesController.sortPopular)
+
 router.get('/sort/food',ServicesController.sortFood)
 
 router.get('/sort/drinks',ServicesController.sortDrinks)
