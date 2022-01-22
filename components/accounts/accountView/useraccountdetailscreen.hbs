@@ -25,12 +25,18 @@
       <p>Gender: {{ this.gender }}</p>
       <p>Email: {{ this.email }}</p>
       <p>Phone: {{ this.phoneNumber }}</p>
+      <p style="color: red">Banned: {{this.archived}}</p>
     </figcaption>
   </div>
 </br>
 <ul>
   <li class="tm-paging-item" id="Back_button"><a href="#" onclick="GoToAccountsPage()" class="floor">Back</a></li>
-  <li class="tm-paging-item" id="Ban_button"><a href="/accounts/banuser/{{this.username}}" onclick="BanUser()" class="floor">Ban user</a></li>
+  {{#if this.archived}}
+  <li class="tm-paging-item" id="UnBan_button"><a href="/accounts/unbanuser/{{this.username}}" class="floor">Unban user</a></li>
+  {{/if}}
+  {{#unless this.archived}}
+  <li class="tm-paging-item" id="Ban_button"><a href="/accounts/banuser/{{this.username}}" class="floor">Ban user</a></li>
+  {{/unless}}
 </ul>
 {{/each}}
 <script src="../../js/accounts.js"></script>

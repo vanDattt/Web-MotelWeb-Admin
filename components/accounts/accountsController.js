@@ -28,6 +28,12 @@ exports.banuser = async (req,res) => {
   res.render('../components/accounts/accountView/useraccountbanscreen');
 }
 
+exports.unbanuser = async (req,res) => {
+  const uname = req.params.id;
+  const account = await accountService.unban(uname);
+  res.render('../components/accounts/accountView/useraccountunbanscreen');
+}
+
 exports.myaccount = async (req,res)=>{
   const uname =  req.user.username;
   console.log(uname);

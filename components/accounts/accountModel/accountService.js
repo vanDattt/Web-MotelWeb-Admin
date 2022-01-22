@@ -7,7 +7,7 @@ exports.list = async (pageNumber, nPerPage) =>{
 }
 
 exports.userlist =  async (pageNumber, nPerPage) =>{
-    let result= useraccount.find({archived: false});
+    let result= useraccount.find({});
     return result.skip(pageNumber > 0 ? (pageNumber -1)*nPerPage : 0).limit(nPerPage);
 }
 
@@ -18,6 +18,13 @@ exports.detail = async (uname) =>{
 
 exports.ban = async (uname) =>{
     useraccount.findOneAndUpdate({username: uname},{$set: {archived: true}},{upsert: false}, function(err, doc) {
+    if (err) return res.send(500, {error: err});
+    return 1;
+    });
+}
+
+exports.unban = async (uname) =>{
+    useraccount.findOneAndUpdate({username: uname},{$set: {archived: false}},{upsert: false}, function(err, doc) {
     if (err) return res.send(500, {error: err});
     return 1;
     });

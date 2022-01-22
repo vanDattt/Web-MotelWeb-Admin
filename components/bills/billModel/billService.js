@@ -1,7 +1,7 @@
 const bill = require("../../../server/model/bill")
 
 exports.list = async (pageNumber, nPerPage) =>{
-    let result= bill.find({});
+    let result= bill.find({solved: true});
     return result.skip(pageNumber > 0 ? (pageNumber -1)*nPerPage : 0).limit(nPerPage);
 }
 
@@ -9,9 +9,9 @@ exports.date = async (day, month ,year) =>{
     var day1 = parseInt(day)+1;
     var month1 = parseInt(month)-1;
     var year1 = year;
-    let result= bill.find({date: {
+    let result= bill.find({checkout: {
         $gte: new Date(year, month-1, day),
-        $lt: new Date(year1,  month1, day1) }
+        $lt: new Date(year1,  month1, day1) },solved: true
       });
     return result;
 }
@@ -19,9 +19,9 @@ exports.date = async (day, month ,year) =>{
 exports.month = async (month ,year) =>{
   var month1 = parseInt(month)-1;
   var year1 = year;
-    let result= bill.find({date: {
+    let result= bill.find({checkout: {
         $gte: new Date(year, month-1, 1),
-        $lt: new Date(year1, month1, 31) }
+        $lt: new Date(year1, month1, 31) },solved: true
       });
 
     return result;
@@ -29,9 +29,9 @@ exports.month = async (month ,year) =>{
 
 exports.year = async (year) =>{
     var year1 = parseInt(year)+1;
-    let result= bill.find({date: {
+    let result= bill.find({checkout: {
         $gte: new Date(year, 0, 1),
-        $lt: new Date(year1, 0, 1) }
+        $lt: new Date(year1, 0, 1) },solved: true
       });
 
     return result;
@@ -46,7 +46,7 @@ exports.totalPrice = async (bills) =>{
           result=result+bills[i].totalPrice
       }
     }else{
-      result=bills[0].totalPrice      
+      result=bills[0].totalPrice
     }
     return result;
 }
